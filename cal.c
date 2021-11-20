@@ -46,10 +46,8 @@ number* resizeNumber(number* num, int size, int initFlag) {
         return num;
     }
 
-    if(num->size > size) {
-        num->size = size;
-        num->data = (element*)realloc(num->data, sizeof(element) * size);
-    }
+    num->size = size;
+    num->data = (element*)realloc(num->data, sizeof(element) * size);
 
     if(initFlag) {
         memset(num->data, 0, sizeof(element) * num->size);
